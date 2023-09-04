@@ -1,5 +1,5 @@
 const User = require('../models/User')
-const io = require('../config/socket')
+const { io } = require('../config/socket')
 const Message = require('../models/Message')
 
 async function getMessages(req, res)

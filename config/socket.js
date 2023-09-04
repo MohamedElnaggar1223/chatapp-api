@@ -1,7 +1,10 @@
 const { Server } = require('socket.io')
+const { createServer } = require('http')
 const PORT = process.env.PORT || 3002
 
-const io = new Server(
+const httpServer = createServer()
+
+const io = new Server( httpServer,
     {
         pingTimeout: 60000,
         cors: 
@@ -17,8 +20,7 @@ io.on('connection', (socket) => {
     });
 
 //@ts-ignore
-io.listen(PORT)
 
 // io.on('typing', (userId) => console.log('hmmmmmmm'))
 
-module.exports = io
+module.exports = {io, httpServer}
