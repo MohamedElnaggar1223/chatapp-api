@@ -10,8 +10,7 @@ const { logger, logEvents } = require('./middleware/logger')
 const errorHandler = require('./middleware/errorHandler')
 const connectDB = require('./config/dbConn')
 const path = require('path')
-const app = express()
-const { httpServer } = require('./config/socket')
+const {io, httpServer, app} = require('./config/socket')
 const PORT = process.env.PORT || 3001
 
 connectDB()
@@ -56,3 +55,5 @@ mongoose.connection.on('error', (err) =>
     console.log(err)
     logEvents(`${err.no}: ${err.code}\t${err.syscall}\t${err.hostname}`, 'mongoErrLog.log')
 })
+
+module.exports = httpServer

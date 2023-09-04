@@ -1,8 +1,9 @@
 const { Server } = require('socket.io')
+const express = require('express')
+const app = express()
 const { createServer } = require('http')
-const PORT = process.env.PORT || 3002
 
-const httpServer = createServer()
+const httpServer = createServer(app)
 
 const io = new Server( httpServer,
     {
@@ -23,4 +24,4 @@ io.on('connection', (socket) => {
 
 // io.on('typing', (userId) => console.log('hmmmmmmm'))
 
-module.exports = {io, httpServer}
+module.exports = {io, httpServer, app}
