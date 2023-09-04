@@ -6,7 +6,7 @@ const io = new Server(
         pingTimeout: 60000,
         cors: 
         {
-            origin: 'http://localhost:3000'
+            origin: 'https://chatapp-najajer.onrender.com'
         }
     })
 
