@@ -10,7 +10,7 @@ const { logger, logEvents } = require('./middleware/logger')
 const errorHandler = require('./middleware/errorHandler')
 const connectDB = require('./config/dbConn')
 const path = require('path')
-const {io, httpServer, app} = require('./config/socket')
+const {httpServer, app} = require('./config/socket')
 const PORT = process.env.PORT || 3001
 
 connectDB()

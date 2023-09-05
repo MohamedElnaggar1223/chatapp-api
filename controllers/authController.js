@@ -5,6 +5,7 @@ const jwt = require('jsonwebtoken')
 
 async function login(req, res)
 {
+    console.log('logging in')
     const { username, email, password } = req.body
     if(!(username || email) || !password) return res.status(400).json({'message': 'All Fields Must Be Given!'})
 

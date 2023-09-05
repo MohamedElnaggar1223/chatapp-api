@@ -18,7 +18,7 @@ io.on('connection', (socket) => {
     console.log('a user connected');
 
     socket.on('typing', ({userId, friendId}) => io.emit(`${userId}typingto${friendId}`))
-    });
+});
 
 //@ts-ignore
 
